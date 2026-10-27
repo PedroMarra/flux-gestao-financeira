@@ -3,3 +3,6 @@ node_modules
 .env
 
 /src/generated/prisma
+
+# Banco local (o projeto usa MySQL via Prisma)
+*.sqlite

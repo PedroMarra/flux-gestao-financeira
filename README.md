@@ -32,32 +32,31 @@ A partir da raiz do projeto, você precisará de terminais separados para rodar 
 
 ### 1. Configurando e Rodando o Backend (API)
 Abra um terminal na raiz do projeto, acesse a pasta do backend e instale as dependências:
-` ` `bash
+```bash
 cd backend
 npm install
-` ` `
-*(Nota: remova os espaços entre as crases ao colar no seu terminal/projeto)*
+```
 
-Crie e configure o arquivo `.env` na pasta `backend` com a string de conexão do MySQL (`DATABASE_URL`) e sua chave secreta (`JWT_SECRET`). Em seguida, rode as migrações, popule o banco (seed) e inicie o servidor:
-` ` `bash
+Copie `backend/.env.example` para `backend/.env` e preencha com a string de conexão do MySQL (`DATABASE_URL`) e sua chave secreta (`JWT_SECRET`). Em seguida, rode as migrações, popule o banco (seed) e inicie o servidor:
+```bash
 npx prisma migrate dev
 npx prisma db seed
 npm run dev
-` ` `
+```
 
 > **💡 Dica de Visualização (Banco de Dados):** Se quiser visualizar e interagir com as tabelas de forma gráfica, abra um novo terminal na raiz do projeto, acesse a pasta do backend e inicie o Prisma Studio:
-> ` ` `bash
+> ```bash
 > cd backend
 > npx prisma studio
-> ` ` `
+> ```
 
 ### 2. Configurando e Rodando o Frontend (Mobile)
 Abra um **novo terminal** na raiz do projeto, acesse a pasta do frontend, instale as dependências e inicie o Expo limpando o cache:
-` ` `bash
+```bash
 cd frontend
 npm install
 npx expo start -c
-` ` `
+```
 > **⚠️ Atenção (Conexão via Celular Físico / Expo Go):** > Para que o aplicativo frontend consiga se comunicar corretamente com a API rodando no seu computador, é necessário apontar para o IP local correto da sua rede Wi-Fi.
 > 
 > Acesse o arquivo `frontend/src/services/api.js` e altere a propriedade `baseURL` substituindo o IP de exemplo pelo IP atual da sua máquina:
